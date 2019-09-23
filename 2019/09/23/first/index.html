@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=11,IE=10,IE=9,IE=8">
     <meta name="baidu-site-verification" content="dIcXMeY8Ya">
     
-    <title>first | Hexo</title>
+    <title>[object Object] | Hexo</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
     <meta name="keywords" content="Jelon, 前端, Web, 张德龙, 前端开发">
     <meta name="description" content="Jelon个人前端小站">
@@ -119,11 +119,11 @@
 <!-- 文章 -->
 <article class="post article">
     <header class="text-center">
-        <h3 class="post-title"><span>first</span></h3>
+        <h3 class="post-title"><span>[object Object]</span></h3>
     </header>
     <p class="post-meta text-center">
-        Jelon 发表于
-        <time datetime="2019-09-23T01:07:34.000Z">2019-09-23</time>
+        赵越 发表于
+        <time datetime="2019-09-23T01:07:34.903Z">2019-09-23</time>
     </p>
     <div class="post-content">
         <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> st;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.util.Scanner;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@author</span> ：zy</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@date</span> ：Created in 2019/9/21 19:25</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Main</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        Scanner sc  = <span class="keyword">new</span> Scanner(System.in);</span><br><span class="line">        <span class="keyword">int</span> n = sc.nextInt();</span><br><span class="line">        <span class="keyword">int</span> A [] = <span class="keyword">new</span> <span class="keyword">int</span>[n];</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span> ; i&lt;A.length ; i++) &#123;</span><br><span class="line">            A[i] = sc.nextInt();</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">int</span> ans = maxSubarraySumCircular(A);</span><br><span class="line">        System.out.println(ans);</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span> <span class="title">maxSubarraySumCircular</span><span class="params">(<span class="keyword">int</span>[] A)</span> </span>&#123;</span><br><span class="line">            <span class="keyword">int</span> max = A[<span class="number">0</span>];</span><br><span class="line">            <span class="keyword">int</span> min = A[<span class="number">0</span>];</span><br><span class="line">            <span class="keyword">int</span> maxSoFar = A[<span class="number">0</span>];</span><br><span class="line">            <span class="keyword">int</span> minSoFar = A[<span class="number">0</span>];</span><br><span class="line">            <span class="keyword">int</span> sum = A[<span class="number">0</span>];</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;A.length;i++) &#123;</span><br><span class="line">                sum += A[i];</span><br><span class="line">                maxSoFar = Math.max(A[i],maxSoFar+A[i]);</span><br><span class="line">                minSoFar = Math.min(A[i],minSoFar+A[i]);</span><br><span class="line">                max = Math.max(max,maxSoFar);</span><br><span class="line">                min = Math.min(min,minSoFar);</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span> (max &lt; <span class="number">0</span>) <span class="keyword">return</span> max;</span><br><span class="line">            <span class="keyword">return</span> Math.max(max,sum-min);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
@@ -132,11 +132,15 @@
     </div>
     <p class="post-meta">
         <span class="post-cat">分类：
-            
+            <a class="cat-link" href="/categories/Web技术/">Web技术</a>
         </span>
         <span class="post-tags">
             标签：
             
+    
+        <a href="/tags/初始化/" title="初始化">初始化</a>
+    
+
         </span>
     </p>
 </article>
@@ -245,6 +249,11 @@
         <!-- 文章分类 -->
 <ul class="widget-bd">
     
+    <li>
+        <a href="/categories/Web技术/">Web技术</a>
+        <span class="badge">(1)</span>
+    </li>
+    
 </ul>
     </section>
 
@@ -253,6 +262,8 @@
         <h3 class="widget-hd"><strong>热门标签</strong></h3>
         <!-- 文章标签 -->
 <div class="widget-bd tag-wrap">
+  
+    <a class="tag-item" href="/tags/初始化/" title="初始化">初始化 (1)</a>
   
 </div>
     </section>

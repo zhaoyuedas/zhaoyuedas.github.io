@@ -131,40 +131,42 @@
     <header>
         <!-- 标签这有且只能显示一个 -->
         
-            <a href="javascript: void(0);" class="cat">未分类</a>
+        <a class="cat-link" href="/categories/Web技术/">Web技术</a>
         
         <!-- 文章标题 -->
         
     <h3 class="post-title">
     	<a href="http://yoursite.com/2019/09/23/first/">
-    		first
+    		[object Object]
     	</a>
     </h3>
 
     </header>
     <p class="post-meta">
-        Jelon 发表于
-        <time datetime="2019-09-23T01:07:34.000Z">2019-09-23</time>
+        赵越 发表于
+        <time datetime="2019-09-23T01:07:34.903Z">2019-09-23</time>
         &nbsp;&nbsp;
         <span class="post-tags">
             标签：
             
+    
+        <a href="/tags/初始化/" title="初始化">初始化</a>
+    
+
         </span>
     </p>
 
     <div class="post-content">
         <div class="post-excerpt">
             
-                <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> st;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.util.Scanner;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@author</span> ：zy</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@date</span> ：Created in 2019/9/21 19:25</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Main</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        Scanner sc  = <span class="keyword">new</span> Scanner(System.in);</span><br><span class="line">        <span class="keyword">int</span> n = sc.nextInt();</span><br><span class="line">        <span class="keyword">int</span> A [] = <span class="keyword">new</span> <span class="keyword">int</span>[n];</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span> ; i&lt;A.length ; i++) &#123;</span><br><span class="line">            A[i] = sc.nextInt();</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">int</span> ans = maxSubarraySumCircular(A);</span><br><span class="line">        System.out.println(ans);</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span> <span class="title">maxSubarraySumCircular</span><span class="params">(<span class="keyword">int</span>[] A)</span> </span>&#123;</span><br><span class="line">            <span class="keyword">int</span> max = A[<span class="number">0</span>];</span><br><span class="line">            <span class="keyword">int</span> min = A[<span class="number">0</span>];</span><br><span class="line">            <span class="keyword">int</span> maxSoFar = A[<span class="number">0</span>];</span><br><span class="line">            <span class="keyword">int</span> minSoFar = A[<span class="number">0</span>];</span><br><span class="line">            <span class="keyword">int</span> sum = A[<span class="number">0</span>];</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;A.length;i++) &#123;</span><br><span class="line">                sum += A[i];</span><br><span class="line">                maxSoFar = Math.max(A[i],maxSoFar+A[i]);</span><br><span class="line">                minSoFar = Math.min(A[i],minSoFar+A[i]);</span><br><span class="line">                max = Math.max(max,maxSoFar);</span><br><span class="line">                min = Math.min(min,minSoFar);</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span> (max &lt; <span class="number">0</span>) <span class="keyword">return</span> max;</span><br><span class="line">            <span class="keyword">return</span> Math.max(max,sum-min);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
+                重点要说一下这个channelRead0方法里面我遇到的问题。由于某些原因还未来得及系统学习Netty，但是又急需把数据收集起来存入数据库。情况是这样的：有一个1w多个字节的数据需要我来解析出真实数据，但是每次用网络测试助手往端口发送数据，收到的数据都会出现不完全的情况。刚开始，我也不知道啥状况，于是对于那些不完整的数据采取的是不处理。后来才知道，TCP是不会出现丢包的，当数据长度过长的时候，路由器转发的时候会对数据进行拆分，分多少次发，channelRead0这个方法就会执行多少次，也就是说当我们觉得收到的数据不完全的时候，不是数据丢失，只是channelRead0方法还在执行中，数据没有收发完。解决办法：自己建立一个动态数组，用于每次执行channelRead0方法存储数据，然后校验首位末尾,校验通过之后，解析完毕，立刻存入数据库，然后清空动态数组。下图可以看到，随着channelRead0不断执行，动态数组越来越长。
             
             <p class="more">
                 <a href="http://yoursite.com/2019/09/23/first/">阅读剩下更多</a>
             </p>
         </div>
         <div class="post-thumbnail" data-img="">
-            <a href="http://yoursite.com/2019/09/23/first/" title="first">
+            <a href="http://yoursite.com/2019/09/23/first/" title="[object Object]">
                 
                     <img class="thumbnail" src="/img/default.png" data-echo="/img/thumbnail/3.jpg" alt="默认配图" >
                 
@@ -192,6 +194,11 @@
         <!-- 文章分类 -->
 <ul class="widget-bd">
     
+    <li>
+        <a href="/categories/Web技术/">Web技术</a>
+        <span class="badge">(1)</span>
+    </li>
+    
 </ul>
     </section>
 
@@ -200,6 +207,8 @@
         <h3 class="widget-hd"><strong>热门标签</strong></h3>
         <!-- 文章标签 -->
 <div class="widget-bd tag-wrap">
+  
+    <a class="tag-item" href="/tags/初始化/" title="初始化">初始化 (1)</a>
   
 </div>
     </section>

@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=11,IE=10,IE=9,IE=8">
     <meta name="baidu-site-verification" content="dIcXMeY8Ya">
     
-    <title>文章归档 | Hexo</title>
+    <title>关于 | Hexo</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
     <meta name="keywords" content="Jelon, 前端, Web, 张德龙, 前端开发">
     <meta name="description" content="Jelon个人前端小站">
@@ -56,19 +56,19 @@
         <div class="dropnav icon-paragraph-justify" id="JELON__btnDropNav"></div>
         <ul class="menu hidden" id="JELON__menu">
             
-            <li rel="/archives/index.html" class="item ">
+            <li rel="/about/index.html" class="item ">
                 <a href="/" title="首页" class="icon-home">&nbsp;首页</a>
             </li>
             
-            <li rel="/archives/index.html" class="item ">
+            <li rel="/about/index.html" class="item ">
                 <a href="/lab/" title="实验室" class="icon-lab">&nbsp;实验室</a>
             </li>
             
-            <li rel="/archives/index.html" class="item ">
+            <li rel="/about/index.html" class="item current">
                 <a href="/about/" title="关于" class="icon-about">&nbsp;关于</a>
             </li>
             
-            <li rel="/archives/index.html" class="item ">
+            <li rel="/about/index.html" class="item ">
                 <a href="/comment/" title="留言" class="icon-comment">&nbsp;留言</a>
             </li>
             
@@ -115,75 +115,74 @@
     <div class="container body clearfix">
         <section class="content">
             <div class="content-main widget">
-                <!-- 文章归档 -->
-
-    <h3 class="widget-hd">
-        <strong>
-            
-                文章归档
-                <!-- 文章归档，可以根据日期分类 -->
-            
-        </strong>
-    </h3>
-    
-        <!-- 文章列表 item -->
-<article class="post">
-    <header>
-        <!-- 标签这有且只能显示一个 -->
-        
-        <a class="cat-link" href="/categories/Web技术/">Web技术</a>
-        
-        <!-- 文章标题 -->
-        
-    <h3 class="post-title">
-    	<a href="http://yoursite.com/2019/09/23/first/">
-    		[object Object]
-    	</a>
-    </h3>
-
+                <!-- 独立页面 -->
+<article class="post article">
+    <header class="text-center">
+        <h4 class="post-title"><a href="javascript: void(0);">关于</a></h4>
     </header>
-    <p class="post-meta">
-        赵越 发表于
-        <time datetime="2019-09-23T01:07:34.903Z">2019-09-23</time>
-        &nbsp;&nbsp;
-        <span class="post-tags">
-            标签：
-            
-    
-        <a href="/tags/初始化/" title="初始化">初始化</a>
-    
-
-        </span>
-    </p>
-
     <div class="post-content">
-        <div class="post-excerpt">
-            
-                重点要说一下这个channelRead0方法里面我遇到的问题。由于某些原因还未来得及系统学习Netty，但是又急需把数据收集起来存入数据库。情况是这样的：有一个1w多个字节的数据需要我来解析出真实数据，但是每次用网络测试助手往端口发送数据，收到的数据都会出现不完全的情况。刚开始，我也不知道啥状况，于是对于那些不完整的数据采取的是不处理。后来才知道，TCP是不会出现丢包的，当数据长度过长的时候，路由器转发的时候会对数据进行拆分，分多少次发，channelRead0这个方法就会执行多少次，也就是说当我们觉得收到的数据不完全的时候，不是数据丢失，只是channelRead0方法还在执行中，数据没有收发完。解决办法：自己建立一个动态数组，用于每次执行channelRead0方法存储数据，然后校验首位末尾,校验通过之后，解析完毕，立刻存入数据库，然后清空动态数组。下图可以看到，随着channelRead0不断执行，动态数组越来越长。
-            
-            <p class="more">
-                <a href="http://yoursite.com/2019/09/23/first/">阅读剩下更多</a>
-            </p>
-        </div>
-        <div class="post-thumbnail" data-img="">
-            <a href="http://yoursite.com/2019/09/23/first/" title="[object Object]">
-                
-                    <img class="thumbnail" src="/img/default.png" data-echo="/img/thumbnail/3.jpg" alt="默认配图" >
-                
-            </a>
-        </div>
+        
+            <!-- 自定义关于页 -->
+
+<p style="color: #444;">
+    <span class="icon-cogs"></span>
+    关于我
+</p>
+
+<ul style="list-style-type: none;">
+    <li>
+        <span class="icon-profile"></span>
+        查看<a href="javascript: alert('更新中...');" target="_blank">个人介绍</a>
+    </li>
+    <li>
+        <span class="icon-office"></span>
+        2014年7月，毕业于中南民族大学
+    </li>
+    <li>
+        <span class="icon-newspaper"></span>
+        现工作于深圳，任职前端开发
+    </li>
+    <li>
+        <span class="icon-envelop"></span>
+        联系邮箱 jangdelong#qq.com（'#'改为'@'）
+    </li>
+</ul>
+
+<p style="color: #444;">
+    <span class="icon-cogs"></span>
+    关于博客
+</p>
+
+<ul style="list-style-type: none;">
+    <li>
+        <span class="icon-files-empty"></span>
+        博客采用<a href="https://hexo.io/">Hexo</a>静态博客系统、主题为个人开发主题<a href="https://github.com/jangdelong/hexo-theme-xups" target="_blank">Xups</a> (<a href="https://hexo.io/themes/" target="_blank">Hexo 官网</a>已收录)
+    </li>
+    <li>
+        <span class="icon-files-empty"></span>
+        博客内容主要是学习工作过程中的一些Web总结和日志琐事，除非特殊声明，博客内容皆为个人原创，转载烦请标注文章来源
+    </li>
+       <li>
+        <span class="icon-files-empty"></span>
+        为了提升博客的访问速度，博客的字体文件以及绝大部分图片采用了某 CDN 存储，代码托管采用 <a target="_blank" href="https://coding.net/">Coding</a>
+    </li>
+</ul>
+
+<p style="color: #444;">
+    <span class="icon-cogs"></span>
+    Github账号
+</p>
+
+<ul style="list-style-type: none;">
+    <li>
+        <span class="icon-github"></span>
+        <a href="https://github.com/jangdelong" target="_blank">我的Github</a>
+    </li>
+</ul>
+
+        
     </div>
 </article>
-
-    
-
-    
-    <nav class="page-navigator">
-        <span class="page-number current">1</span>
-    </nav>
-    
-
-
             </div>
 
         </section>
